@@ -58,10 +58,16 @@ function createNavbarItems() {
  *
 */
 // A function to check whether a specified section is being viewed or not
-function sectionBeingViewed(sec) {
-  let secPosition = sec.getBoundingClientRect();
-  return (secPosition.top >= 0);
+function sectionBeingViewed(sect) {
+    const position = sect.getBoundingClientRect();
+    return (
+        position.top >= 0 &&
+        position.left >= 0 &&
+        position.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        position.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
 }
+
 
 // Giving the section being viewed the apperance of active class
 function activeSection() {
@@ -70,7 +76,7 @@ function activeSection() {
     // Distiguishing the section in view by adding the given class to the section
     if (sectionBeingViewed(sections[i])) {
       //adding (your-active-class) to the section if it is in view and not have the class (your-active-class) in the classList
-      if (!sections[i].classList.contains('your-active-class')) {
+      if (sections[i].classList.contains('your-active-class') === false) {
         sections[i].classList.add('your-active-class')
       }
     //removing the given class from the section if it isn't in view
