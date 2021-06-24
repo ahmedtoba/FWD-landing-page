@@ -43,7 +43,7 @@ function createNavbarItems() {
     //Extracting the data in the data-nav attribute
     let sectionName = sections[i].getAttribute('data-nav');
     //creating a link to the required section using the extracted id as an 'href' and the data from data-nav as link text content
-    navItem.innerHTML = `<a class='menu__link' href="#${sectionID}">${sectionName}</a>`;
+    navItem.innerHTML = '<a class=\'menu__link\' href=\"#'+ sectionID +'\">'+ sectionName +'</a>';
     docFrag.appendChild(navItem);
   }
   navList.appendChild(docFrag);
