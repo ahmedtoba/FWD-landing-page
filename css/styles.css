@@ -12,6 +12,13 @@
 /*
 
 /* ---- Base Rules ---- */
+/* solving the problem of active section class in low resolution devives by making the whole sectoin visible on screen */
+@media (max-width: 767px) {
+    body {
+      font-size: 0.7em;
+    }
+}
+
 body {
     background: rgb(136,203,171);
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
@@ -71,6 +78,7 @@ section {
     margin: 0;
     text-align: right;
 }
+
 
 .navbar__menu li {
     display: inline-block;
