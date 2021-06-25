@@ -104,10 +104,7 @@ const navList = document.querySelector('#navbar__list');
 function sectionBeingViewed(sect) {
     const position = sect.getBoundingClientRect();
     return (
-        position.top >= 0 &&
-        position.left >= 0 &&
-        position.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        position.right <= (window.innerWidth || document.documentElement.clientWidth)
+        position.top >= 0 
     );
 }
 
